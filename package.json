@@ -10,7 +10,8 @@
     "gatsby",
     "source",
     "aws",
-    "dynamodb"
+    "dynamodb",
+    "gatsby-plugin"
   ],
   "author": "W Lutz",
   "license": "MIT",
