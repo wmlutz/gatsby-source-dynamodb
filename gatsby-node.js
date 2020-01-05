@@ -14,7 +14,7 @@ exports.sourceNodes = ( { actions, createNodeId, createContentDigest },
     });
 
     const processData = item => {
-      const nodeId = createNodeId(`dynamodb-${item[options.FieldNameForNodeId]}`)
+      const nodeId = createNodeId(`dynamodb-${item[options.fieldNameForNodeId]}`)
       const nodeContentDigest = createContentDigest(item)
       
       const nodeData = Object.assign({}, item, {
