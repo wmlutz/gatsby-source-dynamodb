@@ -44,8 +44,8 @@ exports.sourceNodes = ( { actions, createNodeId, createContentDigest },
     
         if (typeof data.LastEvaluatedKey != "undefined") {
           console.log("Scanning for more...");
-          params.ExclusiveStartKey = data.LastEvaluatedKey;
-          docClient.scan(params, onScan);
+          options.params.ExclusiveStartKey = data.LastEvaluatedKey;
+          docClient.scan(options.params, onScan);
         } else {
           resolve()
         }
