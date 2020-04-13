@@ -8,6 +8,10 @@
   gatsby-source-dynamodb
 </h1>
 
+### How this fork improves upon the original
+You may use fieldNameForNodeId field to specify an alternative Id field, if you do not have an `Id` field in your table. 
+
+
 This module helps you pull your AWS dynamodb account using IAM credentials. The inspiration was designed to assist connecting private tables from AWS Amplify for public-facing sites.
 
 To install:
@@ -30,6 +34,7 @@ module.exports = {
         accessKeyId: '<AWS_ACCESS_KEY_ID>', 
         secretAccessKey: '<AWS_SECRET_ACCESS_KEY>',
         region: '<AWS_REGION>',
+        fieldNameForNodeId: "MyIdField",
         params: {
           TableName : "<TABLE_NAME>",
           // OTHER PARAMS HERE
