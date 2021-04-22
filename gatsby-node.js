@@ -16,7 +16,6 @@ exports.sourceNodes = ( { actions, createNodeId, createContentDigest },
     const processData = item => {
       const nodeId = createNodeId(`dynamodb-${item.id}`)
       const nodeContentDigest = createContentDigest(item)
-      
       const nodeData = Object.assign({}, item, {
         id: nodeId,
         parent: null,
@@ -44,6 +43,7 @@ exports.sourceNodes = ( { actions, createNodeId, createContentDigest },
     
         if (typeof data.LastEvaluatedKey != "undefined") {
           console.log("Scanning for more...");
+          params = options.params;
           params.ExclusiveStartKey = data.LastEvaluatedKey;
           docClient.scan(params, onScan);
         } else {
